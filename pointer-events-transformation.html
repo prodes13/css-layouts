@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "utf-8">
+<meta name = "author" content="florinc">
+<title>The CSS Box Model</title>
+<script   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="   crossorigin="anonymous"></script>
+<style>
+body {
+    padding: 50px;
+    color: rgba(0, 0, 0, 0.7);
+}
+.trigger {
+    width: 100px;
+    height: 100px;
+    border: 20px solid #999;
+    background: #ddd;
+}
+.box {
+    display: inline-block;
+    background: pink;
+    width: 100px;
+    height: 100px;
+    transition: transform 300ms ease-in-out;
+    pointer-events: none;
+}
+.trigger.clicked .box {
+    transform: translate(200px, 150px) rotate(20deg);
+}
+</style>
+</head>
+<body>
+<div class = "trigger">
+<div class = "box"></div>
+</div>
+<script>
+document.ready(function() {
+    $('.trigger').on('click', function() {
+        $(this).toggleClass('clicked');
+    });
+});
+</script>
+</body>
+</html>
